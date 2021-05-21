@@ -1,3 +1,12 @@
+updated by iris on 21/5/2021:
+
+add audio resource for testing the model -> ./data, downloading from https://datashare.ed.ac.uk/handle/10283/3061
+
+the testing result can be found both in ./data/v2_result and ./result/NISQA_results.csv, which contain the scores of mos_pred, noi_pred, dis_pred, col_pred, loud_pred.
+
+
+
+
 # NISQA: Speech Quality and Naturalness Assessment
 
 *+++ News: The NISQA model has recently been updated to NISQA v2.0. The new version offers multidimensional predictions with higher accuracy and allows for training and finetuning the model.*
