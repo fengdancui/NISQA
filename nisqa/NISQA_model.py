@@ -968,7 +968,7 @@ class nisqaModel(object):
                 self.args['tr_lr'] = args_new['tr_lr']
                 self.args['tr_lr_patience'] = args_new['tr_lr_patience']
                 self.args['tr_num_workers'] = args_new['tr_num_workers']
-                self.args['tr_parallel'] = args_new['tr_parallel']
+                self.args['tr_parallel'] = False
                 self.args['tr_checkpoint'] = args_new['tr_checkpoint']
                 self.args['tr_bias_anchor_db'] = args_new['tr_bias_anchor_db']
                 self.args['tr_bias_mapping'] = args_new['tr_bias_mapping']
@@ -1126,8 +1126,8 @@ class nisqaModel(object):
                 self.dev = torch.device("cuda")
         print('Device: {}'.format(self.dev))
         
-        if (self.dev==torch.device("cpu")) and self.args['tr_parallel']==True:
-            self.args['tr_parallel']==False 
+        if self.dev==torch.device("cpu"):
+            # var = self.args['tr_parallel'] == False
             print('Training on CPU -> tr_parallel set to False')
 
     def _saveResults(self, model, model_args, opt, epoch, loss, ep_runtime, r, db_results, best):
